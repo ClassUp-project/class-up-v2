@@ -18,7 +18,7 @@ class Linscription extends Model
     public function utilisateur()
     {
 
-        return $this->hasOne(Utilisateur::class);
+        return $this->belongsTo(Utilisateur::class);
     }
 
 
