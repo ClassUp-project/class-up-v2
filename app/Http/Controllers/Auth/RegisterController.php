@@ -45,6 +45,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    //redirect after registrer
+    protected function redirectTo()
+    {
+
+        return '/maclasses/create';
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *

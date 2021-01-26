@@ -67,4 +67,5 @@ class Utilisateur extends Authenticatable
         return $this->hasOne(Eleve::class);
     }
 
+
 }
