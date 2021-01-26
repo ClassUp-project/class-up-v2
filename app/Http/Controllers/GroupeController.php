@@ -14,26 +14,27 @@ class GroupeController extends Controller
       }
 
 
-      public function create(Professeur $idProf){
+      public function create(){
 
 
-        return view('choix-classe.create', compact('idProf'));
+        return view('choix-classe.create');
 
     }
 
 
 
-    public function store(){
-
-
-        $groupeClasse = new Groupe;
+    public function store(Request $request){
 
         $profId = Professeur::find('idprofesseur');
 
+        $groupeClasse = new Groupe;
+        $groupeClasse->nom = $request->nom;
+        $groupeClasse->acronyme = $request->acronyme;
 
         $groupeClasse->save();
 
         $groupeClasse->professeur()->attach($profId);
+
 
         return redirect('/maclasses/'.$groupeClasse->idgroupe);
 
@@ -43,7 +44,7 @@ class GroupeController extends Controller
 
     public function show(Groupe $groupeClasse){
 
-        
+
 
         return view('choix-classe.show', compact('groupeClasse'));
     }
