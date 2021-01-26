@@ -25,7 +25,8 @@ class GroupeController extends Controller
 
     public function store(Request $request){
 
-        $profId = Professeur::find('idprofesseur');
+
+        $profId = Professeur::find(1);
 
         $groupeClasse = new Groupe;
         $groupeClasse->nom = $request->nom;
