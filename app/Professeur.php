@@ -31,7 +31,7 @@ class Professeur extends Model
 
     public function groupe()
     {
-        return $this->belongsToMany(Groupe::class);
+        return $this->belongsToMany(Groupe::class)->withPivot('groupe_has_professeur');
     }
 
 

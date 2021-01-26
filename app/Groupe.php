@@ -21,7 +21,7 @@ class Groupe extends Model
     public function professeur()
     {
 
-        return $this->belongsToMany(Professeur::class, 'professeur_idprofesseur', 'eleve_ideleve');
+        return $this->belongsToMany(Professeur::class)->withPivot('groupe_has_professeur');
     }
 
 
