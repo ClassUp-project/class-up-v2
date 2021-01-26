@@ -45,7 +45,7 @@
                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 
                                     <input type="radio" class="btn-check" name="professeur" id="professeur" autocomplete="off" >
-                                    <label class="btn btn-outline-primary" for="professeurs">Professeur</label>
+                                    <label class="btn btn-outline-primary" for="professeur">Professeur</label>
 
                                     <input type="radio" class="btn-check" name="eleve" id="eleve" autocomplete="off">
                                     <label class="btn btn-outline-primary" for="eleve">Eleve</label>

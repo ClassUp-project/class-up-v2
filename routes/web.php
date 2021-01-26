@@ -12,6 +12,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/maclasses/create', 'GroupeController@create');
+Route::post('/maclasses', 'GroupeController@store');
+Route::get('/maclasses/{groupeClasse}', 'GroupeController@show');
+
 Route::get('/questionnaires/create', 'QuestionnaireController@create');
 Route::post('/questionnaires','QuestionnaireController@store');
 Route::get('/questionnaires/{questionnaire}','QuestionnaireController@show');

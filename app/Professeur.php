@@ -25,7 +25,13 @@ class Professeur extends Model
     public function utilisateur()
     {
 
-        return $this->belongsTo(Utilisateur::class);
+        return $this->belongsTo(Utilisateur::class );
+    }
+
+
+    public function groupe()
+    {
+        return $this->belongsToMany(Groupe::class);
     }
 
 
