@@ -51,11 +51,12 @@ class GroupeController extends Controller
 
 
 
-    public function show(Groupe $groupeClasse){
+    public function show(Groupe $groupeClasse, Matiere $matiere){
 
 
+        $matiere = Matiere::all();
 
-        return view('choix-classe.show', compact('groupeClasse'));
+        return view('choix-classe.show', compact('groupeClasse','matiere'));
     }
 
 

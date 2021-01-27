@@ -14,6 +14,8 @@ class Matiere extends Model
 
     protected $primaryKey = 'idmatiere';
 
+    protected $fillable = ['lintitule'];
+
 
     public function groupeMatiere()
     {
