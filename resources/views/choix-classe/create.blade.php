@@ -38,6 +38,20 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Mon dashboard</button>
+
+                        <div class="form-group row">
+                            <label for="lintitule" class="col-md-4 col-form-label text-md-right">{{ __('Ma matière') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lintitule" type="text" class="form-control @error('lintitule') is-invalid @enderror" name="lintitule" value="{{ old('lintitule') }}" required autocomplete="lintitule" autofocus>
+
+                                @error('lintitule')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Vers mon dashboard</button>
                     </form>
                 </div>

@@ -35,6 +35,15 @@ class Professeur extends Model
     }
 
 
+    public function matiereProf()
+    {
+        return $this->hasMany(Matiere::class);
+    }
+
+
+
+
+
 
 
 }
