@@ -25,5 +25,12 @@ class Groupe extends Model
     }
 
 
+    public function matiere()
+    {
+
+        return $this->hasMany(Matiere::class);
+    }
+
+
 
 }

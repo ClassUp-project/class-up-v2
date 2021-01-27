@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Groupe;
 use App\Professeur;
+use App\Matiere;
 use App\Eleve;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class GroupeController extends Controller
 
 
 
-    public function store(Request $request){
+    public function store(Request $request, Matiere $matiere){
 
 
         $profId = Professeur::find(1);
@@ -32,9 +33,16 @@ class GroupeController extends Controller
         $groupeClasse->nom = $request->nom;
         $groupeClasse->acronyme = $request->acronyme;
 
+        $matiere = new Matiere;
+        $matiere->lintitule = $request->lintitule;
+        $matiere->profMatiere()->associate($profId);
+        $matiere->save();
+
+
         $groupeClasse->save();
 
         $groupeClasse->professeur()->attach($profId);
+
 
 
         return redirect('/maclasses/'.$groupeClasse->idgroupe);
