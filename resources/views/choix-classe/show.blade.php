@@ -8,7 +8,10 @@
                 <div class="card-header">
 
 
-                    <h1>Classe: {{$groupeClasse->nom}}</h1>
+
+                    @foreach($groupeClasse as $groupeClasses)
+                    <h1>Classe: {{$groupeClasses->nom}}</h1>
+                    @endforeach
 
 
 
@@ -22,11 +25,19 @@
             <div class="card">
                 <div class="card-header">
 
-                    <h1>Matière:{{$matiere->lintitule}}</h1>
+                    @foreach($matiere as $matieres)
+                    <h1>Matière:{{$matieres->lintitule}}</h1>
+                    @endforeach
 
+                
                 </div>
             </div>
         </div>
 
     </div>
+    <a href="{{ url('/maclasses/create') }}">
+        @csrf
+            <button type="submit" class="btn btn-primary">Rajouter une classe et une matière</button>
+    </a>
 </div>
+
