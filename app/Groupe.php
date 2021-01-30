@@ -31,6 +31,11 @@ class Groupe extends Model
         return $this->hasMany(Matiere::class);
     }
 
+    public function utilisateur()
+    {
+        return $this->belongsTo(Utilisateur::class);
+    }
+
 
 
 }

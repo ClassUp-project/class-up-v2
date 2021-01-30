@@ -8,7 +8,7 @@
 
 
                 <div class="card-body">
-                    <form method="POST" action="/maclasses">
+                    <form method="post" action="/maclasses">
                         @csrf
 
                         <div class="form-group row">
