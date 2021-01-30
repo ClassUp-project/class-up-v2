@@ -64,13 +64,13 @@ class GroupeController extends Controller
 
 
 
-        return view('choix-classe.show', compact('groupeClasse', 'matiere'));
+        return redirect('/maclasses/'.$groupeClasse->idgroupe)->with(compact('matiere'));
 
     }
 
 
 
-    public function show(Groupe $groupeClasse ){
+    public function show(Groupe $groupeClasse, Matiere $matiere ){
 
 
         $groupeClasse = Groupe::all();

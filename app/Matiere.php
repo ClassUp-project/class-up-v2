@@ -28,6 +28,11 @@ class Matiere extends Model
         return $this->belongsTo(Professeur::class);
     }
 
+    public function utilisateur()
+    {
+        return $this->belongsTo(Utilisateur::class);
+    }
+
 
 
 
