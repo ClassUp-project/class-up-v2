@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Groupe;
-use App\Professeur;
-use App\Matiere;
 use App\Eleve;
-use Illuminate\Http\Request;
+use App\Groupe;
+use App\Matiere;
+use App\Professeur;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request;
+
+
 
 class GroupeController extends Controller
 {
@@ -24,11 +27,12 @@ class GroupeController extends Controller
 
 
 
-    public function store(Request $request, Matiere $matiere){
+    public function store(/*Request $request, Matiere $matiere, $idutilisateur*/){
 
 
-        $profId = Professeur::find(1);
+        //$profId = Professeur::find($idutilisateur);
 
+        /*
         $groupeClasse = new Groupe;
         $groupeClasse->nom = $request->nom;
         $groupeClasse->acronyme = $request->acronyme;
@@ -41,20 +45,38 @@ class GroupeController extends Controller
 
         $groupeClasse->save();
 
-        $groupeClasse->professeur()->attach($profId);
+        $groupeClasse = auth()->user()->professeur()->attach($profId);
+        */
+
+        $data = request()->validate([
+
+            'nom'=>'required',
+            'acronyme'=>'required',
+        ]);
+        $groupeClasse =auth()->user()->groupe()->create($data);
+
+        $data = request()->validate([
+
+            'lintitule'=>'required',
+        ]);
+        $matiere =auth()->user()->matiere()->create($data);
 
 
 
-        return redirect('/maclasses/'.$groupeClasse->idgroupe);
+
+        return view('choix-classe.show', compact('groupeClasse', 'matiere'));
 
     }
 
 
 
-    public function show(Groupe $groupeClasse, Matiere $matiere){
+    public function show(Groupe $groupeClasse ){
 
+
+        $groupeClasse = Groupe::all();
 
         $matiere = Matiere::all();
+
 
         return view('choix-classe.show', compact('groupeClasse','matiere'));
     }

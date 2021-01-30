@@ -31,6 +31,7 @@ Route::post('/questionnaires/{questionnaire}/questions', 'QuestionController@sto
 Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@destroy');
 Route::get('/surveys/{questionnaire}-{slug}','EnqueteController@show');
 Route::post('/surveys/{questionnaire}-{slug}', 'EnqueteController@store');
+
 Route::get('/surveys/merci', 'SurveyController@merci');
 
 
@@ -38,5 +39,3 @@ Route::get('/surveys/merci', 'SurveyController@merci');
 Route::get('/matieres/create', 'MatiereController@create');
 Route::post('/matieres', 'MatiereController@store');
 Route::get('/matières/{matiere}', 'MatiereController@show');
-
-

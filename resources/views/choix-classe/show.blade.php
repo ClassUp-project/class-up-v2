@@ -7,7 +7,11 @@
             <div class="card">
                 <div class="card-header">
 
+
                     <h1>Classe: {{$groupeClasse->nom}}</h1>
+
+
+
 
 
                 </div>
@@ -18,9 +22,7 @@
             <div class="card">
                 <div class="card-header">
 
-                    @foreach ($matiere as $matieres)
-                    <h1>Matière: {{$matieres->lintitule}}</h1>
-                    @endforeach
+                    <h1>Matière:{{$matiere->lintitule}}</h1>
 
                 </div>
             </div>
