@@ -9,9 +9,12 @@
 
 
 
-                    @foreach($groupeClasse as $groupeClasses)
-                    <h1>Classe: {{$groupeClasses->nom}}</h1>
+                    @foreach ($groupe as $groupes)
+
+
+                    <h1>Classe: {{$groupes->nom}}</h1>
                     @endforeach
+
 
 
 
@@ -25,11 +28,12 @@
             <div class="card">
                 <div class="card-header">
 
-                    @foreach($matiere as $matieres)
+                    @foreach ($matiere as $matieres)
                     <h1>Matière:{{$matieres->lintitule}}</h1>
                     @endforeach
 
-                
+
+
                 </div>
             </div>
         </div>
