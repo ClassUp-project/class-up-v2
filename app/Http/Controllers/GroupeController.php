@@ -5,6 +5,7 @@ use App\Eleve;
 use App\Groupe;
 use App\Matiere;
 use App\Professeur;
+use App\Utilisateur;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -53,13 +54,13 @@ class GroupeController extends Controller
             'nom'=>'required',
             'acronyme'=>'required',
         ]);
-        $groupeClasse =auth()->user()->groupe()->create($data);
+        $groupeClasse = Auth::user()->groupe()->create($data);
 
         $data = request()->validate([
 
             'lintitule'=>'required',
         ]);
-        $matiere =auth()->user()->matiere()->create($data);
+        $matiere = Auth::user()->matiere()->create($data);
 
 
 
@@ -70,15 +71,17 @@ class GroupeController extends Controller
 
 
 
-    public function show(Groupe $groupeClasse, Matiere $matiere ){
+    public function show($idutilisateur ){
 
 
-        $groupeClasse = Groupe::all();
-
-        $matiere = Matiere::all();
 
 
-        return view('choix-classe.show', compact('groupeClasse','matiere'));
+        $groupe = auth()->user()->groupe;
+
+        $matiere = auth()->user()->matiere;
+
+
+        return view('choix-classe.show', compact('groupe','matiere'));
     }
 
 
