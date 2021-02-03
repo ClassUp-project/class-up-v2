@@ -48,6 +48,10 @@
             </div>
         </div>
     </div>
+    <a href="{{ route('classe', Auth::user()) }}">
+        @csrf
+            <button type="submit" class="btn btn-primary mt-4 ml-2">Voir mes classes et mes matières</button>
+    </a>
 </div>
 </div>
 @endsection

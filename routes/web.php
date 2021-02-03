@@ -15,7 +15,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route vers le choix et vue de la classe
 Route::get('/maclasses/create', 'GroupeController@create');
 Route::post('/maclasses', 'GroupeController@store');
-Route::get('/maclasses/{idutilisateur}', 'GroupeController@show');
+Route::get('/maclasses/{idutilisateur}', 'GroupeController@show')->name('classe');
 
 //Route vers les questionnaires, questions, réponses, enquetes
 //Questionnaire
