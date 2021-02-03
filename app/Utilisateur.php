@@ -50,6 +50,12 @@ class Utilisateur extends Authenticatable
 
     }
 
+    public function matiere()
+    {
+        return $this->hasMany(Matiere::class);
+
+    }
+
 
     public function linscription()
     {
@@ -59,12 +65,18 @@ class Utilisateur extends Authenticatable
 
     public function professeur()
     {
-        return $this->hasOne(Professeur::class);
+        return $this->hasone(Professeur::class);
     }
 
     public function eleve()
     {
         return $this->hasOne(Eleve::class);
     }
+
+    public function groupe()
+    {
+        return $this->hasMany(Groupe::class);
+    }
+
 
 }

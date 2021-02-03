@@ -25,8 +25,23 @@ class Professeur extends Model
     public function utilisateur()
     {
 
-        return $this->belongsTo(Utilisateur::class);
+        return $this->belongsTo(Utilisateur::class );
     }
+
+
+    public function groupe()
+    {
+        return $this->belongsToMany(Groupe::class)->withPivot('groupe_has_professeur');
+    }
+
+
+    public function matiereProf()
+    {
+        return $this->hasMany(Matiere::class);
+    }
+
+
+
 
 
 

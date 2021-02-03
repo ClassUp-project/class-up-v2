@@ -43,7 +43,7 @@
 
                             <div class="col-md-6">
                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                    
+
                                     <input type="radio" class="btn-check" name="professeur" id="professeur" autocomplete="off" >
                                     <label class="btn btn-outline-primary" for="professeur">Professeur</label>
 
