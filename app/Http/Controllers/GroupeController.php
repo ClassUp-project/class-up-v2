@@ -75,7 +75,6 @@ class GroupeController extends Controller
 
 
 
-
         $groupe = auth()->user()->groupe;
 
         $matiere = auth()->user()->matiere;

@@ -65,7 +65,7 @@ class Utilisateur extends Authenticatable
 
     public function professeur()
     {
-        return $this->belongsToMany(Professeur::class);
+        return $this->hasone(Professeur::class);
     }
 
     public function eleve()

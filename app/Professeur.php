@@ -25,7 +25,7 @@ class Professeur extends Model
     public function utilisateur()
     {
 
-        return $this->belongsToMany(Utilisateur::class );
+        return $this->belongsTo(Utilisateur::class );
     }
 
 
